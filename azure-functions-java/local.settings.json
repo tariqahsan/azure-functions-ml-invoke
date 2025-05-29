@@ -1,0 +1,8 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "java",
+    "AML_ENDPOINT_URL": "https://aml-endpoint.azurewebsites.net/score",
+    "AML_API_KEY": "aml-api-key"
+  }
+}
