@@ -1,0 +1,41 @@
+<div class="container">
+  <mat-toolbar class="custom-toolbar" color="primary">
+    <img src="./assets/dtic-logo-60" alt="MAV" class="logo">
+    <div class="toolbar-content"></div>
+    <span class="company-name">Defense Technical Information Service</span><br>
+    <span class="spacer"></span>
+    <span class="subtitle"></span>
+  </mat-toolbar>
+</div>
+<br>
+<div class="container">
+  <mat-card>
+    <!-- <h2>Ask a Question</h2> -->
+    <h2 class="custom-label">Request Data</h2>
+    <!-- <mat-card>
+      <mat-card-content>
+        <h2 class="custom-label">Ask a Question</h2>
+      </mat-card-content>
+    </mat-card> -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your JSON query</mat-label>
+      <input matInput [formControl]="prompt" placeholder="e.g., What are the five pillars of Islam?" />
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" class="custom-button" (click)="sendPrompt()" [disabled]="loading">
+        {{ loading ? 'Sending...' : 'Send' }}
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+  <br>
+  <mat-card>
+    <!-- <mat-card-title>Response</mat-card-title> -->
+    <h2 class="custom-label">Response</h2>
+    <mat-card-content>
+      <textarea matInput [value]="responseText" rows="10" readonly style="width:100%"></textarea>
+    </mat-card-content>
+  </mat-card>
+</div>

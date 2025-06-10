@@ -1,0 +1,62 @@
+<div class="container">
+    <mat-toolbar class="custom-toolbar" color="primary">
+      <img src="./assets/dtic-logo-75.png" alt="MAV" class="logo">
+      <div class="toolbar-content"></div>
+      <span class="company-name">Defense Technical Information Center</span><br>
+      <span class="spacer"></span>
+      <span class="apiname">{{apiname}}</span> 
+      <span class="spacer"></span>
+      <span class="subtitle">Azure ML Online Endpoint Invoker</span>
+      
+    </mat-toolbar>
+  </div>
+  <br>
+  <!-- <div class="container tab-container">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link
+         routerLink="/openai"
+         routerLinkActive #rlaOpenai="routerLinkActive"
+         [active]="rlaOpenai.isActive">
+        OpenAI
+      </a>
+      <a mat-tab-link
+         routerLink="/ollama"
+         routerLinkActive #rlaOllama="routerLinkActive"
+         [active]="rlaOllama.isActive">
+        Ollama
+      </a>
+    </nav>
+  </div> -->
+  
+  <div class="container">
+    <mat-card>
+      <!-- <h2>Ask a Question</h2> -->
+      <h2 class="custom-label">Request Data</h2>
+      <!-- <mat-card>
+        <mat-card-content>
+          <h2 class="custom-label">Ask a Question</h2>
+        </mat-card-content>
+      </mat-card> -->
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your JSON query</mat-label>
+        <input matInput [formControl]="prompt" placeholder="e.g., What are the five pillars of Islam?" />
+      </mat-form-field>
+  
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="custom-button" (click)="sendPrompt()" [disabled]="loading">
+          {{ loading ? 'Sending...' : 'Send' }}
+        </button>
+      </mat-card-actions>
+  
+    </mat-card>
+    <br>
+    <mat-card>
+      <!-- <mat-card-title>Response</mat-card-title> -->
+      <h2 class="custom-label">Response</h2>
+      <mat-card-content>
+        <textarea matInput [value]="responseText" rows="10" readonly style="width:100%"></textarea>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
